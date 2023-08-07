@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Task from './components/TaskItems';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Daily Task</Text>
+        <Text style={styles.sectionTitle}>Hey, Name!</Text>
 
         <View style={styles.itemsContainer}>
           {/* This is where the tasks will go */}
+          <Text style={styles.sectionTitle}>My Week</Text>
           <Task
             color={'#F5BDA3'}
             category={'Meeting'}
@@ -30,26 +31,27 @@ export default function App() {
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#cebfb6'
   },
   tasksWrapper: {
-    paddingTop: 100,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
     paddingHorizontal: 20,
-    paddingVertical: 30
+    paddingVertical: 10,
+
   },
   itemsContainer: {
     backgroundColor: 'rgb(255,240,227)',
-    borderRadius: 15
+    borderTopLeftRadius: 15,
+    borderBottomRightRadius: 15,
   },
 });
